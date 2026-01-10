@@ -1,0 +1,12 @@
+﻿pylops\_mpi.basicoperators.MPIMatrixMult
+========================================
+
+.. currentmodule:: pylops_mpi.basicoperators
+
+.. autofunction:: MPIMatrixMult
+
+.. include:: backreferences/pylops_mpi.basicoperators.MPIMatrixMult.examples
+
+.. raw:: html
+
+     <div style='clear:both'></div>

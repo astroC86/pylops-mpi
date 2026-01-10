@@ -1,0 +1,790 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    
+        <title>Installation &#8212; PyLops-MPI</title>
+    
+
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+    <link rel="stylesheet" type="text/css" href="_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="_static/style.css?v=e5b2244c" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=e45f66c9" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'installation';</script>
+    <link rel="icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="GPU Support" href="gpu.html" />
+    <link rel="prev" title="Overview" href="index.html" />
+    
+    <script src="_static/require.js"></script>
+
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/pylopsmpi_b.png" class="logo__image only-light" alt="PyLops-MPI - Home"/>
+    <img src="_static/pylopsmpi.png" class="logo__image only-dark pst-js-only" alt="PyLops-MPI - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="index.html">
+    Overview
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    Installation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="gpu.html">
+    GPU Support
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="benchmarking.html">
+    Benchmarking
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="api/index.html">
+    PyLops MPI API
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="gallery/index.html">
+    Gallery
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="adding.html">
+    Implementing new operators
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="contributing.html">
+    Contributing
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="changelog.html">
+    Changelog
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="credits.html">
+    Credits
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="index.html">
+    Overview
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    Installation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="gpu.html">
+    GPU Support
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="benchmarking.html">
+    Benchmarking
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="api/index.html">
+    PyLops MPI API
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="gallery/index.html">
+    Gallery
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="adding.html">
+    Implementing new operators
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="contributing.html">
+    Contributing
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="changelog.html">
+    Changelog
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="credits.html">
+    Credits
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"></div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Installation</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="installation">
+<span id="id1"></span><h1>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h1>
+<section id="dependencies">
+<h2>Dependencies<a class="headerlink" href="#dependencies" title="Link to this heading">#</a></h2>
+<p>The minimal set of dependencies for the PyLops-MPI project is:</p>
+<ul class="simple">
+<li><p>MPI (Message Passing Interface)</p></li>
+<li><p>Python 3.10 or greater</p></li>
+<li><p><a class="reference external" href="http://www.numpy.org">NumPy</a></p></li>
+<li><p><a class="reference external" href="http://www.scipy.org/scipylib/index.html">SciPy</a></p></li>
+<li><p><a class="reference external" href="https://matplotlib.org/">Matplotlib</a></p></li>
+<li><p><a class="reference external" href="https://mpi4py.readthedocs.io/en/stable/">MPI4py</a></p></li>
+<li><p><a class="reference external" href="https://pylops.readthedocs.io/en/stable/">PyLops</a></p></li>
+</ul>
+<p>Additionally, to use the CUDA-aware MPI engine, the following additional
+dependencies are required:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://cupy.dev/">CuPy</a></p></li>
+<li><p>CUDA-aware MPI</p></li>
+</ul>
+<p>Similarly, to use the NCCL engine, the following additional
+dependencies are required:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://cupy.dev/">CuPy</a></p></li>
+<li><p><a class="reference external" href="https://docs.cupy.dev/en/stable/install.html#additional-cuda-libraries">NCCL</a></p></li>
+</ul>
+<p>We highly encourage using the <a class="reference external" href="https://www.anaconda.com/download">Anaconda Python distribution</a>
+or its standalone package manager <a class="reference external" href="https://docs.conda.io/en/latest/index.html">Conda</a>. However,
+if this is not possible, some of the dependencies must be installed prior to installing PyLops-MPI.</p>
+<section id="download-and-install-mpi">
+<h3>Download and Install MPI<a class="headerlink" href="#download-and-install-mpi" title="Link to this heading">#</a></h3>
+<p>Visit the official website of your MPI vendor of choice to download an appropriate MPI
+implementation for your system:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.open-mpi.org/">Open MPI</a></p></li>
+<li><p><a class="reference external" href="https://www.mpich.org/">MPICH</a></p></li>
+<li><p><a class="reference external" href="https://www.intel.com/content/www/us/en/developer/tools/oneapi/mpi-library.html">Intel MPI</a></p></li>
+<li><p>…</p></li>
+</ul>
+<p>Alternatively, the conda-forge community provides ready-to-use binary packages for four MPI implementations
+(see <a class="reference external" href="https://mpi4py.readthedocs.io/en/stable/install.html#conda-packages">MPI4Py documentation</a> for more
+details). In this case, you can defer the installation to the stage when the conda environment for your project
+is created - see below for more details.</p>
+</section>
+<section id="verify-mpi-installation">
+<h3>Verify MPI Installation<a class="headerlink" href="#verify-mpi-installation" title="Link to this heading">#</a></h3>
+<p>After installing MPI, verify its installation by opening a terminal and running the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;&gt;<span class="w"> </span>mpiexec<span class="w"> </span>--version
+</pre></div>
+</div>
+</section>
+<section id="install-cuda-aware-mpi-optional">
+<h3>Install CUDA-Aware MPI (optional)<a class="headerlink" href="#install-cuda-aware-mpi-optional" title="Link to this heading">#</a></h3>
+<p>To be able to achieve the best performance when using PyLops-MPI with CuPy arrays, a CUDA-Aware version of
+MPI must be installed.</p>
+<p>For <cite>Open MPI</cite>, the conda-forge package has built-in CUDA support, as long as a pre-installed CUDA is detected.
+Run the following <a class="reference external" href="https://docs.open-mpi.org/en/v5.0.x/tuning-apps/networking/cuda.html#how-do-i-verify-that-open-mpi-has-been-built-with-cuda-support">commands</a>
+for diagnostics.</p>
+<p>For the other MPI implementations, refer to their specific documentation.</p>
+</section>
+<section id="install-nccl-optional">
+<h3>Install NCCL (optional)<a class="headerlink" href="#install-nccl-optional" title="Link to this heading">#</a></h3>
+<p>To obtain highly-optimized performance on GPU clusters, PyLops-MPI also supports the Nvidia’s collective communication calls
+<a class="reference external" href="https://developer.nvidia.com/nccl">(NCCL)</a>. Two additional dependencies are required, CuPy and NCCL, which can be installed
+using <cite>pip</cite>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;&gt;<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>cupy-cuda12x<span class="w"> </span>nvidia-nccl-cu12
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Replace <cite>12x</cite> with your CUDA version (e.g., <cite>11x</cite> for CUDA 11.x).</p>
+</div>
+</section>
+</section>
+<section id="step-by-step-installation-for-users">
+<span id="userinstall"></span><h2>Step-by-step installation for users<a class="headerlink" href="#step-by-step-installation-for-users" title="Link to this heading">#</a></h2>
+<p>Currently PyLops-MPI can only be installed using <code class="docutils literal notranslate"><span class="pre">pip</span></code>; simply type the following
+command in your terminal to install the PyPI distribution:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;&gt;<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>pylops-mpi
+</pre></div>
+</div>
+<p>Note that when installing via <cite>pip</cite>, only <em>required</em> dependencies are installed.</p>
+</section>
+<section id="step-by-step-installation-for-developers">
+<span id="devinstall"></span><h2>Step-by-step installation for developers<a class="headerlink" href="#step-by-step-installation-for-developers" title="Link to this heading">#</a></h2>
+<section id="fork-pylops-mpi">
+<h3>Fork PyLops-MPI<a class="headerlink" href="#fork-pylops-mpi" title="Link to this heading">#</a></h3>
+<p>Fork the <a class="reference external" href="https://github.com/PyLops/pylops-mpi">PyLops-MPI repository</a> and clone it by executing the following in your terminal:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;&gt;<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/YOUR-USERNAME/pylops-mpi.git
+</pre></div>
+</div>
+<p>We recommend installing dependencies into a separate environment.
+For that end, we provide a <cite>Makefile</cite> with useful commands for setting up the environment.</p>
+</section>
+<section id="install-dependencies">
+<h3>Install dependencies<a class="headerlink" href="#install-dependencies" title="Link to this heading">#</a></h3>
+<section id="conda-recommended">
+<h4>Conda (recommended)<a class="headerlink" href="#conda-recommended" title="Link to this heading">#</a></h4>
+<p>For a <code class="docutils literal notranslate"><span class="pre">conda</span></code> environment, run</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;&gt;<span class="w"> </span>make<span class="w"> </span>dev-install_conda
+</pre></div>
+</div>
+<p>This will create and activate an environment called <code class="docutils literal notranslate"><span class="pre">pylops_mpi</span></code>, with all
+required and optional dependencies.</p>
+<p>If you want to also install MPI as part of the creation process of the conda environment,
+modify the <code class="docutils literal notranslate"><span class="pre">environment-dev.yml</span></code> file by adding <code class="docutils literal notranslate"><span class="pre">openmpi</span></code>``mpich```impi_rt````msmpi``
+just above <code class="docutils literal notranslate"><span class="pre">mpi4py</span></code>. Note that only <code class="docutils literal notranslate"><span class="pre">openmpi</span></code> provides a CUDA-Aware MPI installation.</p>
+<p>If you want to leverage CUDA-Aware MPI but prefer to use another MPI installation, you must
+either switch to a <cite>Pip</cite>-based installation (see below), or move <code class="docutils literal notranslate"><span class="pre">mpi4py</span></code> into the <code class="docutils literal notranslate"><span class="pre">pip</span></code>
+section of the <code class="docutils literal notranslate"><span class="pre">environment-dev.yml</span></code> file and export the variable <code class="docutils literal notranslate"><span class="pre">MPICC</span></code> pointing to
+the path of your CUDA-Aware MPI installation.</p>
+<p>If you want to enable <a class="reference external" href="https://developer.nvidia.com/nccl">NCCL</a> in PyLops-MPI, run this instead</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;&gt;<span class="w"> </span>make<span class="w"> </span>dev-install_conda_nccl
+</pre></div>
+</div>
+</section>
+<section id="pip">
+<h4>Pip<a class="headerlink" href="#pip" title="Link to this heading">#</a></h4>
+<p>If you prefer a <code class="docutils literal notranslate"><span class="pre">pip</span></code> installation, we provide the following command</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;&gt;<span class="w"> </span>make<span class="w"> </span>dev-install
+</pre></div>
+</div>
+<p>Note that, differently from the  <code class="docutils literal notranslate"><span class="pre">conda</span></code> command, the above <strong>will not</strong> create a virtual environment.
+Make sure you create and activate your environment previously.</p>
+<p>Similarly, if you want to enable <a class="reference external" href="https://developer.nvidia.com/nccl">NCCL</a> but prefer using pip,
+you must first check the CUDA version of your system:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;&gt;<span class="w"> </span>nvidia-smi
+</pre></div>
+</div>
+<p>The <cite>Makefile</cite> is pre-configured with CUDA 12.x. If you use this version, run</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;&gt;<span class="w"> </span>make<span class="w"> </span>dev-install_nccl
+</pre></div>
+</div>
+<p>Otherwise, you can change the command in <cite>Makefile</cite> to an appropriate CUDA version
+i.e., If you use CUDA 11.x, change <code class="docutils literal notranslate"><span class="pre">cupy-cuda12x</span></code> and <code class="docutils literal notranslate"><span class="pre">nvidia-nccl-cu12</span></code> to
+<code class="docutils literal notranslate"><span class="pre">cupy-cuda11x</span></code> and <code class="docutils literal notranslate"><span class="pre">nvidia-nccl-cu11</span></code> and run the command.</p>
+</section>
+</section>
+<section id="run-tests">
+<h3>Run tests<a class="headerlink" href="#run-tests" title="Link to this heading">#</a></h3>
+<p>To ensure that everything has been setup correctly, run tests:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;&gt;<span class="w"> </span>make<span class="w"> </span>tests
+</pre></div>
+</div>
+<p>Make sure no tests fail, this guarantees that the installation has been successful.</p>
+<p>If PyLops-MPI is installed with NCCL, also run tests:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;&gt;<span class="w"> </span>make<span class="w"> </span>tests_nccl
+</pre></div>
+</div>
+</section>
+<section id="run-examples-and-tutorials">
+<h3>Run examples and tutorials<a class="headerlink" href="#run-examples-and-tutorials" title="Link to this heading">#</a></h3>
+<p>Since the sphinx-gallery creates examples/tutorials using only a single process, it is highly recommended to test the
+examples/tutorials using n processes.</p>
+<p>run examples:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;&gt;<span class="w"> </span>make<span class="w"> </span>run_examples
+</pre></div>
+</div>
+<p>run tutorials:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;&gt;<span class="w"> </span>make<span class="w"> </span>run_tutorials
+</pre></div>
+</div>
+<p>Make sure all the examples and tutorials python scripts are executed without any errors.</p>
+</section>
+<section id="add-remote-optional">
+<h3>Add remote (optional)<a class="headerlink" href="#add-remote-optional" title="Link to this heading">#</a></h3>
+<p>To keep up-to-date on the latest changes while you are developing, you may optionally add
+the PyLops-MPI repository as a <em>remote</em>.
+Run the following command to add the PyLops-MPI repo as a remote named <em>upstream</em>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;&gt;<span class="w"> </span>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>upstream<span class="w"> </span>https://github.com/PyLops/pylops-mpi
+</pre></div>
+</div>
+<p>From then on, you can pull changes (for example, in the main branch) with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;&gt;<span class="w"> </span>git<span class="w"> </span>pull<span class="w"> </span>upstream<span class="w"> </span>main
+</pre></div>
+</div>
+</section>
+<section id="final-steps">
+<h3>Final steps<a class="headerlink" href="#final-steps" title="Link to this heading">#</a></h3>
+<p>PyLops-MPI does not enforce the use of a linter as a pre-commit hook, but we do highly encourage using one before submitting a Pull Request.
+A properly configured linter (<code class="docutils literal notranslate"><span class="pre">flake8</span></code>) can be run with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;&gt;<span class="w"> </span>make<span class="w"> </span>lint
+</pre></div>
+</div>
+<p>In addition, it is highly encouraged to build the docs prior to submitting a Pull Request.
+Apart from ensuring that docstrings are properly formatted, they can aid in catching bugs during development.</p>
+<p>Build the docs with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;&gt;<span class="w"> </span>make<span class="w"> </span>doc
+</pre></div>
+</div>
+<p>or Update the docs with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;&gt;<span class="w"> </span>make<span class="w"> </span>docupdate
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Overview</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="gpu.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">GPU Support</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dependencies">Dependencies</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#download-and-install-mpi">Download and Install MPI</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verify-mpi-installation">Verify MPI Installation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-cuda-aware-mpi-optional">Install CUDA-Aware MPI (optional)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-nccl-optional">Install NCCL (optional)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-by-step-installation-for-users">Step-by-step installation for users</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-by-step-installation-for-developers">Step-by-step installation for developers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fork-pylops-mpi">Fork PyLops-MPI</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-dependencies">Install dependencies</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#conda-recommended">Conda (recommended)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pip">Pip</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-tests">Run tests</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-examples-and-tutorials">Run examples and tutorials</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#add-remote-optional">Add remote (optional)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#final-steps">Final steps</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, PyLops Development Team.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.0.4.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
