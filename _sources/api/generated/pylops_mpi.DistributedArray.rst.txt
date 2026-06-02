@@ -16,10 +16,12 @@
         ~DistributedArray.conj
         ~DistributedArray.copy
         ~DistributedArray.dot
+        ~DistributedArray.empty_like
         ~DistributedArray.iadd
         ~DistributedArray.multiply
         ~DistributedArray.norm
         ~DistributedArray.ravel
+        ~DistributedArray.redistribute
         ~DistributedArray.to_dist
         ~DistributedArray.zeros_like
 
