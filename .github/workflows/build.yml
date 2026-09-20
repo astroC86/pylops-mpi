@@ -62,6 +62,5 @@ jobs:
           PRTE_MCA_rmaps_default_binding_policy: 'none'
           OMPI_MCA_btl: '^openib'
           # For MPICH/Intel MPI
-          HYDRA_BINDING: 'none'
           UCX_TLS: 'self,sm,tcp'
         run: mpiexec -n ${{ matrix.rank }} pytest tests/ --with-mpi
