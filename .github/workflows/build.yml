@@ -15,7 +15,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-latest, macos-latest]
-        python-version: ['3.11', '3.12', '3.13', '3.14']
+        python-version: ['3.11', '3.12', '3.13', '3.14', '3.14t']
         mpi: ['mpich', 'openmpi', 'intelmpi']
         rank: ['2', '4']
         exclude:
@@ -34,7 +34,7 @@ jobs:
         with:
           mpi: ${{ matrix.mpi }}
       - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
           python-version: ${{ matrix.python-version }}
       - name: Install fftw libraries
@@ -56,9 +56,12 @@ jobs:
       - name: Install pylops-mpi
         run: pip install .[all]
       - name: Testing using pytest-mpi
-        run: |
-          if [ "${{ matrix.mpi }}" = "openmpi" ]; then
-            mpiexec --mca btl ^openib -n ${{ matrix.rank }} pytest tests/ --with-mpi
-          else
-            mpiexec -n ${{ matrix.rank }} pytest tests/ --with-mpi
-          fi
+        env:
+          # For OpenMPI
+          PRTE_MCA_rmaps_default_mapping_policy: ':OVERSUBSCRIBE'
+          PRTE_MCA_rmaps_default_binding_policy: 'none'
+          OMPI_MCA_btl: '^openib'
+          # For MPICH/Intel MPI
+          HYDRA_BINDING: 'none'
+          UCX_TLS: 'self,sm,tcp'
+        run: mpiexec -n ${{ matrix.rank }} pytest tests/ --with-mpi
