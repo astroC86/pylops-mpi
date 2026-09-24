@@ -30,23 +30,23 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
     <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../_static/style.css?v=e5b2244c" />
-    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css?v=fd6457a4" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css?v=c83e6b79" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css?v=f4aeca0c" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css?v=2082cf3c" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
     <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=e45f66c9" />
   
   <!-- So that users can add custom icons -->
-  <script defer src="../_static/scripts/fontawesome.js?digest=0790524f97105ba85085"></script>
+  <script defer src="../_static/scripts/fontawesome.js?digest=cb8930eaaf36d9849b67"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=0790524f97105ba85085" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67" />
 
     <script src="../_static/documentation_options.js?v=5929fcd5"></script>
     <script src="../_static/doctools.js?v=fd6eb6e6"></script>
@@ -471,6 +471,7 @@
 <li><a href="pylops_mpi/basicoperators/FirstDerivative.html">pylops_mpi.basicoperators.FirstDerivative</a></li>
 <li><a href="pylops_mpi/basicoperators/Gradient.html">pylops_mpi.basicoperators.Gradient</a></li>
 <li><a href="pylops_mpi/basicoperators/HStack.html">pylops_mpi.basicoperators.HStack</a></li>
+<li><a href="pylops_mpi/basicoperators/Halo.html">pylops_mpi.basicoperators.Halo</a></li>
 <li><a href="pylops_mpi/basicoperators/Laplacian.html">pylops_mpi.basicoperators.Laplacian</a></li>
 <li><a href="pylops_mpi/basicoperators/MatrixMult.html">pylops_mpi.basicoperators.MatrixMult</a></li>
 <li><a href="pylops_mpi/basicoperators/SecondDerivative.html">pylops_mpi.basicoperators.SecondDerivative</a></li>
@@ -479,9 +480,14 @@
 <li><a href="pylops_mpi/optimization/cls_basic.html">pylops_mpi.optimization.cls_basic</a></li>
 <li><a href="pylops_mpi/optimization/cls_sparsity.html">pylops_mpi.optimization.cls_sparsity</a></li>
 <li><a href="pylops_mpi/optimization/sparsity.html">pylops_mpi.optimization.sparsity</a></li>
+<li><a href="pylops_mpi/proximal/ProxOperator.html">pylops_mpi.proximal.ProxOperator</a></li>
+<li><a href="pylops_mpi/proximal/optimization/primal.html">pylops_mpi.proximal.optimization.primal</a></li>
+<li><a href="pylops_mpi/proximal/proximal/L2.html">pylops_mpi.proximal.proximal.L2</a></li>
+<li><a href="pylops_mpi/proximal/proximal/L21.html">pylops_mpi.proximal.proximal.L21</a></li>
 <li><a href="pylops_mpi/signalprocessing/FFT2D.html">pylops_mpi.signalprocessing.FFT2D</a></li>
 <li><a href="pylops_mpi/signalprocessing/FFTND.html">pylops_mpi.signalprocessing.FFTND</a></li>
 <li><a href="pylops_mpi/signalprocessing/Fredholm1.html">pylops_mpi.signalprocessing.Fredholm1</a></li>
+<li><a href="pylops_mpi/signalprocessing/NonStatConvolve1d.html">pylops_mpi.signalprocessing.NonStatConvolve1d</a></li>
 <li><a href="pylops_mpi/utils/benchmark.html">pylops_mpi.utils.benchmark</a></li>
 <li><a href="pylops_mpi/utils/dottest.html">pylops_mpi.utils.dottest</a></li>
 <li><a href="pylops_mpi/waveeqprocessing/MDC.html">pylops_mpi.waveeqprocessing.MDC</a></li>
@@ -514,8 +520,8 @@
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=0790524f97105ba85085"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -549,7 +555,7 @@
         <div class="footer-item">
 <p class="theme-version">
   <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.18.0.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.21.0.
 </p></div>
       
     </div>
